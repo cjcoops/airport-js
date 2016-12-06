@@ -22,4 +22,11 @@ var plane;
       expect(plane.land).toHaveBeenCalled();
     });
 
+    it("should be able to take off a plane", function() {
+      spyOn(plane,'takeOff');
+      airport.land(plane);
+      airport.takeOff(plane);
+      expect(plane.takeOff).toHaveBeenCalled();
+    });
+
 });
