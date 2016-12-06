@@ -7,7 +7,13 @@ describe("Weather", function() {
   });
 
   it("can be stormy", function() {
-    expect(weather).toBeStormy;
+    spyOn(Math,"random").and.returnValue(5/6);
+    expect(weather.isStormy()).toEqual(true);
+  });
+
+  it("can not be stormy", function() {
+    spyOn(Math,"random").and.returnValue(0);
+    expect(weather.isStormy()).toEqual(false);
   });
 
 });
