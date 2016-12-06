@@ -15,8 +15,11 @@ describe("Plane", function() {
     expect(plane.isFlying).toBeFalsy();
   });
 
-
-
+  it ("should be able to take off", function() {
+    plane.land();
+    plane.takeOff();
+    expect(plane.isFlying).toEqual(true);
+  });
 
 
 
