@@ -7,5 +7,9 @@ Plane.prototype.land = function() {
 };
 
 Plane.prototype.takeOff = function() {
-  this.isFlying = true;
+  if (this.isFlying === true) {
+    throw TypeError("The plane in already off the ground");
+  } else {
+    this.isFlying = true;
+  }
 };

@@ -21,8 +21,9 @@ describe("Plane", function() {
     expect(plane.isFlying).toEqual(true);
   });
 
-
-
+  it ("when already in the air it should raise an error when it takes off", function() {
+    expect(function(){ plane.takeOff(); }).toThrowError("The plane in already off the ground");
+  });
 
 
 });
